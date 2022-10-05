@@ -91,12 +91,13 @@ under construction
 .... coming soon ..... 
 
 # Reference
-MediaPipe
+-   [MediaPipe](https://mediapipe.dev/)
 
-Author
-Kazuhito Takahashi(https://twitter.com/KzhtTkhs)
+# Author
 
-Translation and other improvements 
+Kazuhito Takahashi([https://twitter.com/KzhtTkhs](https://twitter.com/KzhtTkhs))
+
+# Translation and other improvements 
 Kouremenos Dimitris (https://github.com/dkourem)
 
 # License
