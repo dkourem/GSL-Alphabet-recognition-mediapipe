@@ -12,3 +12,77 @@ This repository contains the following contents.
 
 - Sample code program
 - GSL Alfabet Hand sign recognition model (TFLite)
+
+## Requirements
+mediapipe 0.8.1
+OpenCV 3.4.2 or Later
+Tensorflow 2.3.0 or Later
+scikit-learn 0.23.2 or Later (Only if you want to display the confusion matrix)
+matplotlib 3.3.2 or Later (Only if you want to display the confusion matrix)
+
+## Using webcam (demo)
+
+Here's how to run the demo using your webcam:
+
+```
+python gsl-alfabet-recognizer.py
+```
+
+The following options can be specified when running the demo.
+
+--device
+Specifying the camera device number (Default：0)
+--width
+Width at the time of camera capture (Default：960)
+--height
+Height at the time of camera capture (Default：540)
+--use_static_image_mode
+Whether to use static_image_mode option for MediaPipe inference (Default：Unspecified)
+--min_detection_confidence
+Detection confidence threshold (Default：0.5)
+--min_tracking_confidence
+Tracking confidence threshold (Default：0.5)
+
+## Directory
+```bash
+| gsl-alfabet-recognizer.py  
+├─model
+│  ├─keypoint_classifier
+│     │  keypoint.csv
+│     │  keypoint_classifier.hdf5
+│     │  keypoint_classifier.py
+│     │  keypoint_classifier.tflite
+│     └─ keypoint_classifier_label.csv
+│            
+│  
+│          
+└─utils
+    └─cvfpscalc.py
+```
+### gsl-alfabet-recognizer.py
+This is a sample program for inference.
+In addition, learning data (key points) for hand sign recognition.
+
+### model/keypoint_classifier
+This directory stores files related to hand sign recognition.
+The following files are stored.
+
+### Training data(keypoint.csv)
+Trained model(keypoint_classifier.tflite)
+Label data(keypoint_classifier_label.csv)
+Inference module(keypoint_classifier.py)
+
+### utils/cvfpscalc.py
+This is a module for FPS measurement.
+
+## Training
+Hand sign recognition recognition can add and change training data and retrain the model.
+
+Hand sign recognition training
+
+### 1.Learning data collection
+
+The key point coordinates are the ones that have undergone the following preprocessing up to 24.
+![](https://github.com/dkourem/GSL-Alphabet-Recognizer/blob/main/mediapipe-hand-pose.png)
+
+### 2.Model training
