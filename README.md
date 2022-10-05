@@ -86,3 +86,18 @@ The key point coordinates are the ones that have undergone the following preproc
 ![](https://github.com/dkourem/GSL-Alphabet-Recognizer/blob/main/mediapipe-hand-pose.png)
 
 ### 2.Model training
+
+under construction 
+.... coming soon ..... 
+
+# Reference
+MediaPipe
+
+Author
+Kazuhito Takahashi(https://twitter.com/KzhtTkhs)
+
+Translation and other improvements 
+Kouremenos Dimitris (https://github.com/dkourem)
+
+# License
+GSL Alphabet Recognizer using mediapipe is under [Apache v2 license](https://github.com/kinivi/hand-gesture-recognition-mediapipe/blob/main/LICENSE).
