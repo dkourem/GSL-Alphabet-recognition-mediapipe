@@ -1,11 +1,9 @@
 # GSL-Alphabet-Recognizer
-GSL Alphabet Recognizer using mediapipe. 
+GSL Alphabet Recognizer using [MediaPipe](https://mediapipe.dev/).
 We estimate hand pose using MediaPipe (Python Version). 
-This is a sample program that recognizes GSL Alfabet hand signs with a simple MLP using the detected key points.
+This is a sample program that recognizes GSL Alphabet hand signs with a simple multilayer perceptron (MLP) using the detected key points.
 
 ![](https://github.com/dkourem/GSL-Alphabet-Recognizer/blob/main/demo-video.gif)
-
-
 
 
 This repository contains the following contents.
@@ -14,7 +12,7 @@ This repository contains the following contents.
 - GSL Alfabet Hand sign recognition model (TFLite)
 
 ## Requirements
-mediapipe 0.8.1
+mediapipe v0.8.11
 OpenCV 3.4.2 or Later
 Tensorflow 2.3.0 or Later
 scikit-learn 0.23.2 or Later (Only if you want to display the confusion matrix)
@@ -52,10 +50,7 @@ Tracking confidence threshold (Default：0.5)
 │     │  keypoint_classifier.hdf5
 │     │  keypoint_classifier.py
 │     │  keypoint_classifier.tflite
-│     └─ keypoint_classifier_label.csv
-│            
-│  
-│          
+│     └─ keypoint_classifier_label.csv                  
 └─utils
     └─cvfpscalc.py
 ```
@@ -75,30 +70,19 @@ Inference module(keypoint_classifier.py)
 ### utils/cvfpscalc.py
 This is a module for FPS measurement.
 
-## Training
-Hand sign recognition recognition can add and change training data and retrain the model.
-
-Hand sign recognition training
-
-### 1.Learning data collection
-
-The key point coordinates are the ones that have undergone the following preprocessing up to 24.
+## Learning data collection
+The key point coordinates (21) are the ones that have undergone the following preprocessing up to 24 classes.
 ![](https://github.com/dkourem/GSL-Alphabet-Recognizer/blob/main/mediapipe-hand-pose.png)
 
-### 2.Model training
-
-under construction 
-.... coming soon ..... 
-
-# Reference
+## Reference
 -   [MediaPipe](https://mediapipe.dev/)
 
-# Author
+## Author
 
-Kazuhito Takahashi([https://twitter.com/KzhtTkhs](https://twitter.com/KzhtTkhs))
+- Kazuhito Takahashi([https://twitter.com/KzhtTkhs](https://twitter.com/KzhtTkhs))
 
-# Translation and other improvements 
-Kouremenos Dimitris (https://github.com/dkourem)
+## Translation and other improvements 
+- Kouremenos Dimitris (https://github.com/dkourem)
 
-# License
+## License
 GSL Alphabet Recognizer using mediapipe is under [Apache v2 license](https://github.com/kinivi/hand-gesture-recognition-mediapipe/blob/main/LICENSE).
