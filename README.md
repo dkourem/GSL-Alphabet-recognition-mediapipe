@@ -10,6 +10,7 @@ This repository contains the following contents.
 
 - Sample code program
 - GSL Alfabet Hand sign recognition model (TFLite)
+- Learning data for Alphabet sign recognition 
 
 ## Requirements
 mediapipe v0.8.11
@@ -24,6 +25,10 @@ Here's how to run the demo using your webcam:
 
 ```
 python gsl-alfabet-recognizer.py
+```
+or in some cases as macOS
+```
+python3 gsl-alfabet-recognizer.py
 ```
 
 The following options can be specified when running the demo.
@@ -43,7 +48,8 @@ Tracking confidence threshold (Default：0.5)
 
 ## Directory
 ```bash
-| gsl-alfabet-recognizer.py  
+│ gsl-alfabet-recognizer.py  
+│
 ├─model
 │  ├─keypoint_classifier
 │     │  keypoint.csv
@@ -62,27 +68,37 @@ In addition, learning data (key points) for hand sign recognition.
 This directory stores files related to hand sign recognition.
 The following files are stored.
 
-### Training data(keypoint.csv)
-Trained model(keypoint_classifier.tflite)
-Label data(keypoint_classifier_label.csv)
-Inference module(keypoint_classifier.py)
+-   Training data (keypoint.csv)
+-   Trained model (keypoint_classifier.tflite)
+-   Label data (24 classes) (keypoint_classifier_label.csv)
+-   Inference module (keypoint_classifier.py)
+-   Greek alphabet (alphabet-24 letters.csv)
 
 ### utils/cvfpscalc.py
 This is a module for FPS measurement.
 
 ## Learning data collection
-The key point coordinates (21) are the ones that have undergone the following preprocessing up to 24 classes.
+The ahnd key points added to "model/keypoint_classifier/keypoint.csv" as shown below.
+1st column: Pressed number (used as class ID), 2nd and subsequent columns: Key point coordinates
+![](https://user-images.githubusercontent.com/37477845/102345725-28d26280-3fe1-11eb-9eeb-8c938e3f625b.png)
+
+The key point coordinates are the ones that have undergone the following preprocessing one of the 24 classes.
 ![](https://github.com/dkourem/GSL-Alphabet-Recognizer/blob/main/mediapipe-hand-pose.png)
+the landmarks coordinates does :
+1. Convert to relative coordinates
+2. Flatten to one-dimensional array
+3. Normalize to the maximum value (absolute value)
+
+Class ID: 0 is related to "alpha" label. 
+Class ID: 1 to "beta" label. 
+
+. . . 
+
+Class ID: 23 for "omega" label.  
 
 ## Reference
--   [MediaPipe](https://mediapipe.dev/)
-
-## Author
-
-- Kazuhito Takahashi([https://twitter.com/KzhtTkhs](https://twitter.com/KzhtTkhs))
-
-## Translation and other improvements 
-- Kouremenos Dimitris (https://github.com/dkourem)
+- [MediaPipe](https://mediapipe.dev/)
+- We used and modified code from the [repo](https://github.com/Kazuhito00/hand-gesture-recognition-using-mediapipe).
 
 ## License
 GSL Alphabet Recognizer using mediapipe is under [Apache v2 license](https://github.com/kinivi/hand-gesture-recognition-mediapipe/blob/main/LICENSE).
